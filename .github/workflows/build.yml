@@ -1,0 +1,23 @@
+name: Build example project
+on: [pull_request, push]
+jobs:
+  build_native:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+        # Build standard
+        - { name: "windows - native", os: windows-latest, command: "build", config: "" }
+        - { name: "ubuntu  - native", os: ubuntu-latest,  command: "build", config: "" }
+        - { name: "macos   - native", os: macos-latest,   command: "build", config: "" }
+
+        # Build bzlmod
+        - { name: "windows - native", os: windows-latest, command: "build", config: "--enable_bzlmod" }
+        - { name: "ubuntu  - native", os: ubuntu-latest,  command: "build", config: "--enable_bzlmod" }
+        - { name: "macos   - native", os: macos-latest,   command: "build", config: "--enable_bzlmod" }
+
+    name: "Build - ${{ matrix.name }}"
+    runs-on: ${{ matrix.os }}
+    steps:
+    - uses: actions/checkout@v3
+    - run: bazel ${{ matrix.command }} //... -k ${{ matrix.config }} --verbose_failures

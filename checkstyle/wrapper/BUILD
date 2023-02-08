@@ -1,0 +1,11 @@
+load("@rules_java//java:defs.bzl", "java_binary")
+
+java_binary(
+    name = "wrapper",
+    srcs = glob(["src/main/java/**/*.java"]),
+    main_class = "rules_checkstyle.Main",
+    visibility = ["//visibility:public"],
+    deps = [
+        "@rules_checkstyle_dependencies//:com_puppycrawl_tools_checkstyle",
+    ],
+)

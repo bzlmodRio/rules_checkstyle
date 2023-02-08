@@ -1,0 +1,26 @@
+module(
+    name = "rules_checkstyle",
+    version = "10.1",
+)
+
+bazel_dep(name = "rules_java", version = "5.3.5")
+bazel_dep(name = "rules_jvm_external", version = "4.4.2")
+
+CHECKSTYLE_VERSION = "10.1"
+
+maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
+maven.install(
+    name = "rules_checkstyle_dependencies",
+    artifacts = [
+        "com.puppycrawl.tools:checkstyle:{}".format(CHECKSTYLE_VERSION),
+    ],
+    lock_file = "//:rules_checkstyle_dependencies_install.json",
+    repositories = [
+        "https://repo1.maven.org/maven2",
+        "https://repo.maven.apache.org/maven2/",
+    ],
+)
+use_repo(
+    maven,
+    "rules_checkstyle_dependencies",
+)
