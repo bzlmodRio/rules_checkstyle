@@ -9,18 +9,16 @@ import java.util.Arrays;
 import java.util.List;
 
 public final class Main {
-
-
     private static class BlockExistSecurityManager extends SecurityManager {
         private int exitCode = Integer.MAX_VALUE;
 
-        @Override 
+        @Override
         public void checkExit(int status) {
             exitCode = status;
             throw new SecurityException();
         }
 
-        @Override 
+        @Override
         public void checkPermission(Permission perm) {
         }
     }
@@ -29,7 +27,7 @@ public final class Main {
         List<String> arguments = Arrays.asList(args);
 
         boolean failed = false;
-        
+
         BlockExistSecurityManager secManager = new BlockExistSecurityManager();
         System.setSecurityManager(secManager);
 
@@ -40,7 +38,7 @@ public final class Main {
         } catch (IOException ex) {
             throw ex;
         }
-        
+
         if (failed) {
             String outputFile = argument(arguments, "-o");
             printFile(outputFile);
