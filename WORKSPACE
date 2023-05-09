@@ -3,10 +3,9 @@ workspace(name = "rules_checkstyle")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 # WPI Formatter
-http_archive(
+local_repository(
     name = "rules_wpiformat",
-    sha256 = "b5a2a5cdff940e4dcd9d0188d5579cd260d2d96571b74b087acb701617bd27ad",
-    url = "https://github.com/bzlmodRio/rules_wpiformat/releases/download/2022.30/rules_wpiformat-2022.30.tar.gz",
+    path = "../../rules/rules_wpiformat",
 )
 
 http_archive(

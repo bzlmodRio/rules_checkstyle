@@ -3,8 +3,8 @@ load("@bazel_tools//tools/build_defs/repo:utils.bzl", "maybe")
 
 def load_checkstyle_rule_dependencies():
     # JVM External
-    RULES_JVM_EXTERNAL_COMMITISH = "4.5"
-    RULES_JVM_EXTERNAL_SHA = "b17d7388feb9bfa7f2fa09031b32707df529f26c91ab9e5d909eb1676badd9a6"
+    RULES_JVM_EXTERNAL_COMMITISH = "5.2"
+    RULES_JVM_EXTERNAL_SHA = "3824ac95d9edf8465c7a42b7fcb88a5c6b85d2bac0e98b941ba13f235216f313"
     maybe(
         http_archive,
         name = "rules_jvm_external",
