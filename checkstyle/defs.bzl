@@ -41,11 +41,9 @@ def _impl(ctx):
 checkstyle = rule(
     implementation = _impl,
     attrs = {
-        "_executable": attr.label(
-            default = "//checkstyle/wrapper",
-            #default = "@rules_checkstyle_dependencies//:com_puppycrawl_tools_checkstyle",
-            executable = True,
-            cfg = "exec",
+        "config_file": attr.label(
+            allow_files = True,
+            mandatory = True,
         ),
         "srcs": attr.label_list(
             allow_files = True,
@@ -53,9 +51,11 @@ checkstyle = rule(
             mandatory = True,
             allow_empty = False,
         ),
-        "config_file": attr.label(
-            allow_files = True,
-            mandatory = True,
+        "_executable": attr.label(
+            default = "//checkstyle/wrapper",
+            #default = "@rules_checkstyle_dependencies//:com_puppycrawl_tools_checkstyle",
+            executable = True,
+            cfg = "exec",
         ),
     },
     provides = [DefaultInfo],
