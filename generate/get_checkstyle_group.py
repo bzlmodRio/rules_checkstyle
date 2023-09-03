@@ -2,7 +2,7 @@ from bazelrio_gentool.generate_styleguide_rule import StyleguideGroup
 
 
 def get_checkstyle_group():
-    version = "10.12.2"
+    version = "10.1"
 
     group = StyleguideGroup(
         short_name="checkstyle",

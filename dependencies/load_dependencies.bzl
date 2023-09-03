@@ -6,7 +6,7 @@ def load_checkstyle_dependencies():
     maven_install(
         name = "rules_checkstyle_dependencies",
         artifacts = [
-            "com.puppycrawl.tools:checkstyle:10.12.2",
+            "com.puppycrawl.tools:checkstyle:10.1",
         ],
         repositories = [
             "https://repo1.maven.org/maven2",
