@@ -125,7 +125,7 @@
     "@@rules_jvm_external~//:extensions.bzl%maven": {
       "general": {
         "bzlTransitiveDigest": "Pq3YnJEflPAALx/UMykUnN3aA5bve0fNm/cuLvt/zvI=",
-        "usagesDigest": "xARvQFJ5b8BUGBmn87ZMFCK9C0lWqok8MK0dd3UHSn4=",
+        "usagesDigest": "o7g2b2juEMFjVdrFJXSfdjg5gQ0WEFn5qLtCl3HUr6k=",
         "recordedFileInputs": {
           "@@//rules_checkstyle_dependencies_install.json": "eb49a14435bc87b08b3217bb369dcd1c49aaa3bcce7699abb4a90cc0d02e130f",
           "@@rules_jvm_external~//rules_jvm_external_deps_install.json": "0bfbc915d9155df44d7a3b216e8f3c1fbcd110e358dd07637dc393583a5227e8"
@@ -1211,7 +1211,7 @@
               ],
               "boms": [],
               "artifacts": [
-                "{ \"group\": \"com.puppycrawl.tools\", \"artifact\": \"checkstyle\", \"version\": \"10.1\" }"
+                "{ \"group\": \"com.puppycrawl.tools\", \"artifact\": \"checkstyle\", \"version\": \"10.12.2\" }"
               ],
               "fetch_sources": false,
               "fetch_javadoc": false,
@@ -2596,7 +2596,7 @@
                 "{ \"repo_url\": \"https://repo.maven.apache.org/maven2/\" }"
               ],
               "artifacts": [
-                "{ \"group\": \"com.puppycrawl.tools\", \"artifact\": \"checkstyle\", \"version\": \"10.1\" }"
+                "{ \"group\": \"com.puppycrawl.tools\", \"artifact\": \"checkstyle\", \"version\": \"10.12.2\" }"
               ],
               "fail_on_missing_checksum": true,
               "fetch_sources": false,
