@@ -1,8 +1,6 @@
 load("@rules_jvm_external//:defs.bzl", "maven_install")
-load("@rules_jvm_external//:repositories.bzl", "rules_jvm_external_deps")
 
 def load_checkstyle_dependencies():
-    rules_jvm_external_deps()
     maven_install(
         name = "rules_checkstyle_dependencies",
         artifacts = [
