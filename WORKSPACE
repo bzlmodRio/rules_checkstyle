@@ -4,9 +4,9 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
     name = "rules_python",
-    sha256 = "690e0141724abb568267e003c7b6d9a54925df40c275a870a4d934161dc9dd53",
-    strip_prefix = "rules_python-0.40.0",
-    url = "https://github.com/bazelbuild/rules_python/releases/download/0.40.0/rules_python-0.40.0.tar.gz",
+    sha256 = "f609f341d6e9090b981b3f45324d05a819fd7a5a56434f849c761971ce2c47da",
+    strip_prefix = "rules_python-1.7.0",
+    url = "https://github.com/bazelbuild/rules_python/releases/download/1.7.0/rules_python-1.7.0.tar.gz",
 )
 
 http_archive(
@@ -18,15 +18,15 @@ http_archive(
 
 http_archive(
     name = "rules_cc",
-    sha256 = "712d77868b3152dd618c4d64faaddefcc5965f90f5de6e6dd1d5ddcd0be82d42",
-    strip_prefix = "rules_cc-0.1.1",
-    url = "https://github.com/bazelbuild/rules_cc/releases/download/0.1.1/rules_cc-0.1.1.tar.gz",
+    sha256 = "0d3b4f984c4c2e1acfd1378e0148d35caf2ef1d9eb95b688f8e19ce0c41bdf5b",
+    strip_prefix = "rules_cc-0.1.4",
+    url = "https://github.com/bazelbuild/rules_cc/releases/download/0.1.4/rules_cc-0.1.4.tar.gz",
 )
 
 http_archive(
     name = "bazel_skylib",
-    sha256 = "bc283cdfcd526a52c3201279cda4bc298652efa898b10b4db0837dc51652756f",
-    url = "https://github.com/bazelbuild/bazel-skylib/releases/download/1.7.1/bazel-skylib-1.7.1.tar.gz",
+    sha256 = "51b5105a760b353773f904d2bbc5e664d0987fbaf22265164de65d43e910d8ac",
+    url = "https://github.com/bazelbuild/bazel-skylib/releases/download/1.8.1/bazel-skylib-1.8.1.tar.gz",
 )
 
 http_archive(
@@ -45,15 +45,26 @@ http_archive(
 
 http_archive(
     name = "rules_java",
-    sha256 = "d31b6c69e479ffa45460b64dc9c7792a431cac721ef8d5219fc9f603fa2ff877",
-    url = "https://github.com/bazelbuild/rules_java/releases/download/8.11.0/rules_java-8.11.0.tar.gz",
+    sha256 = "1558508fc6c348d7f99477bd21681e5746936f15f0436b5f4233e30832a590f9",
+    url = "https://github.com/bazelbuild/rules_java/releases/download/8.12.0/rules_java-8.12.0.tar.gz",
 )
 
 # WPI Formatter
 http_archive(
+    name = "bazel_features",
+    sha256 = "a015f3f2ebf4f1ac3f4ca8ea371610acb63e1903514fa8725272d381948d2747",
+    strip_prefix = "bazel_features-1.31.0",
+    url = "https://github.com/bazel-contrib/bazel_features/releases/download/v1.31.0/bazel_features-v1.31.0.tar.gz",
+)
+
+load("@bazel_features//:deps.bzl", "bazel_features_deps")
+
+bazel_features_deps()
+
+http_archive(
     name = "rules_wpiformat",
-    sha256 = "d27a5706aff034c84fca018f46c751575792a2ef267cb5a9af70c677b2b52c40",
-    url = "https://github.com/bzlmodRio/rules_wpiformat/releases/download/2025.33/rules_wpiformat-2025.33.tar.gz",
+    sha256 = "ac055f723802c2bfcdaf2c46e3426e0dc685988561173ba8d4f6ad55f6e65a99",
+    url = "https://github.com/bzlmodRio/rules_wpiformat/releases/download/2025.68/rules_wpiformat-2025.68.tar.gz",
 )
 
 # Rule Dependencies
